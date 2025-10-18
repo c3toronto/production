@@ -1,0 +1,22 @@
+[workspace]
+authors = ["skim2257 <skim2257>"]
+channels = ["conda-forge"]
+name = "c3to-prod.github.io"
+platforms = ["osx-arm64", "linux-64"]
+version = "0.1.0"
+
+[tasks]
+serve = "mkdocs serve"
+build = "mkdocs build"
+deploy = "mkdocs gh-deploy"
+
+[dependencies]
+python = "3.12.*"
+mkdocs = ">=1.6.1,<2"
+mkdocs-material = ">=9.6.21,<10"
+pymdown-extensions = ">=10.16.1,<11"
+watchdog = ">=6.0.0,<7"
+click = "==8.2.1" #hotfix
+
+[pypi-dependencies]
+mkdocs-mermaid2-plugin = ">=1.2.2, <2"

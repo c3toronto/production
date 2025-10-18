@@ -1,0 +1,89 @@
+site_name: C3TO Production KB
+site_url: https://c3to-prod.github.io
+site_description: C3TO Production Knowledge Base
+site_author: Sejin Kim
+
+theme:
+  name: material
+  logo: assets/icons/c3.png
+  favicon: assets/icons/c3-favicon.png
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: indigo
+      accent: orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: indigo
+      accent: orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    # - navigation.instant
+    # - navigation.instant.progress
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.integrate
+
+nav:
+  - Home: index.md
+  - Sound: sound.md
+  - Screens: 
+    - Setup: screens.md
+    - ProPresenter: propresenter.md
+    - ATEM: atem.md
+  - Lights: lights.md
+  - Midtown Gym: kids.md
+
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/c3to-prod
+
+extra_css:
+  - assets/extra.css
+
+plugins:
+  - search
+  - tags
+  - mermaid2
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      base_path: 
+        - docs/
+      check_paths: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid_custom
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
+  - attr_list
+  - md_in_html
+  - tables
+  - toc
