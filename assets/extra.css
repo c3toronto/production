@@ -1,0 +1,32 @@
+:root 
+  .md-typeset details.custom {
+    border-color: rgb(180, 180, 180);
+  }
+  .md-typeset .custom > .admonition-title,
+  .md-typeset .custom > summary {
+    background-color: rgba(86, 86, 86, 0.1);
+  }
+  .md-typeset .custom > .admonition-title::before,
+  .md-typeset .custom > summary::before {
+    background-color: rgb(180, 180, 180);
+    -webkit-mask-image: var(--md-admonition-icon--question);
+            mask-image: var(--md-admonition-icon--question);
+  }
+  .md-typeset details.checklist {
+    border-color: rgb(255, 145, 0);
+  }
+  .md-typeset .checklist > .admonition-title,
+  .md-typeset .checklist > summary {
+    background-color: rgba(255, 145, 0, 0.1);
+  }
+  .md-typeset .checklist > .admonition-title::before,
+  .md-typeset .checklist > summary::before {
+    background-color: rgb(255, 145, 0);
+    -webkit-mask-image: var(--md-admonition-icon--success);
+            mask-image: var(--md-admonition-icon--success);
+  }
+   /* :root  > *{
+    --md-primary-fg-color:        #yellow; } /* 
+    --md-primary-fg-color--light: #ECB7B7;
+    --md-primary-fg-color--dark:  #90030C;
+  } */
