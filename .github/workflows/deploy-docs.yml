@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -23,5 +24,10 @@ jobs:
           cache: true
           cache-write: ${{ github.event_name == 'push' && github.ref_name == 'main' }}
 
+      - name: Build MkDocs
+        if: github.event_name == 'pull_request'
+        run: pixi run build
+
       - name: Build and deploy MkDocs
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: pixi run deploy
